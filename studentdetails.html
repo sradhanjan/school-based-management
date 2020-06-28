@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>student details</title>
+</head>
+<style>
+table{
+			border: 1px solid black;
+		}
+
+		td{
+			border: 1px solid black;
+		}
+#myInput {
+  
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 80%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+</style>
+<body>
+<input type="text" name="" id="myInput" onkeyup="searchFun()" placeholder="Search by names.." onkeyup="searchFun()">
+<table id="myTable">
+	<tr class="header">
+<thead>
+	
+	
+	<th>NAME</th>
+	<th>PHOTO</th>
+	<th>CLASS</th>
+	<th>DIVISION</th>
+	<th>PARENT DETAILS</th>
+	<th>ADDRESS</th>
+</thead>
+</tr>
+<tr>
+	
+	<td>RAMESH VARMA</td>
+	<td><img src="ramesh.jpg" width =200px length =200px alt="there should be a pic over here"></td>
+	<td>FOURTH</td>
+    <td align="center">A</td>
+    <td>MOTHER : SWARA VARMA<br>FATHER : PUNEET VARMA</td>
+    <td>BHARTI NAGAR,SANGHARSH MARG,SECTOR 5,MUMBAI</td>
+    
+</td>
+</tr>
+<tr>
+	
+	<td>SIDDHARTH AGGARWAL</td>
+	<td><img src="sid.jpg" width =200px length =500px alt="there should be a pic over here"></td>
+	<td>THIRD</td>
+    <td align="center">B</td>
+    <td>MOTHER : REEMA AGGARWAL<br>FATHER : MANISH AGGARWAL</td>
+    <td>SUBHASH NAGAR,SECTOR 2,DWIPA CHAWK,MUMBAI</td>
+    
+</td>
+</tr>
+<tr>
+	
+	<td>MARIA MA</td>
+	<td><img src="girl.jpg" width =200px length =200px alt="there should be a pic over here"></td>
+	<td>NINTH</td>
+    <td align="center">C</td>
+    <td>MOTHER : JESSICA MA<br>FATHER : JULIAN MA</td>
+    <td>TIWARY HEIGHTS,VEERNAGAR,SECTOR 1,CHANDNI CHAWK,MUMBAI</td>
+    
+</td>
+</tr>
+
+<tr>
+	
+	<td>NISHIKA JAIN</td>
+	<td><img src="ladki.jpg" width =200px length =200px alt="there should be a pic over here"></td>
+	<td>SIXTH</td>
+    <td align="center">D</td>
+    <td>MOTHER : POOJA JAIN<br>FATHER : AAYUSH JAIN</td>
+    <td>INDRALOK APARTMENTS,AMRINDAR NAGAR,SECTOR 7,HEERA MARG,MUMBAI</td>
+    
+</td>
+</tr>
+
+
+<tr>
+	
+	<td>HARSHIT PATEL</td>
+	<td><img src="ladka.jpg" width =200px length =200px alt="there should be a pic over here"></td>
+	<td>TENTH</td>
+    <td align="center">E</td>
+    <td>MOTHER : CHETNA PATEL<br>FATHER : AARAV PATEL</td>
+    <td>RAHEJA COMPLEX,POONAM NAGAR,SECTOR 10,LEKHA MARG,MUMBAI</td>
+    
+</td>
+</tr>
+</table>
+</body>
+<script>
+const searchFun = () =>{
+	
+
+var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+	  }
+  
+</script>
+</html>
